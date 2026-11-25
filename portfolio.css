@@ -19,11 +19,19 @@ html {
 
 body {
     width: 100%;
-    background-color: #F2D8A7;
+    /* background-color: #F2D8A7; */
     overflow-x: hidden;
 }
 
+.roxo {
+    background-color: #725D8C;
+    color: #F2D8A7;
+}
 
+.amarelo{
+    background-color: #F2D8A7;
+    color: #725D8C;
+}
 /* NAVBAR */
 nav {
     position: fixed;
@@ -126,12 +134,10 @@ h1, h2 {
     font-family: 'Anton', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
-    color: #725D8C;
 }
 
 p {
     font-family: 'Poppins', sans-serif;
-    color: #725D8C;
 }
 
 
@@ -222,15 +228,24 @@ p {
 
 .imagem-descricao img {
     width: 100%;
-    max-width: 400px;
+    max-width: 800px;
     border-radius: 20px;
 }
 
 
 /* PÁGINA MINHA HISTÓRIA */
-.conteudo-historia {
+
+.layout-historia {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
+
+    display: flex;
+    align-items: stretch;
+    gap: 50px;
+}
+
+.conteudo-historia {
+    flex: 1;
 }
 
 .conteudo-historia h2 {
@@ -244,6 +259,19 @@ p {
     font-weight: 500;
 }
 
+.imagem-historia {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.imagem-historia img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
 
 /* DEMAIS PÁGINAS */
 .interesses h2,
@@ -252,6 +280,211 @@ p {
     font-size: clamp(50px, 8vw, 110px);
 }
 
+/* PÁGINA HABILIDADES */
+.habilidades {
+    gap: 40px;
+}
+
+.grupo-habilidades {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.grupo-habilidades h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.cards-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-habilidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: 140px;
+    padding: 25px 10px;
+
+    background-color: #725D8C;
+    color: #F2D8A7;
+    border-radius: 20px;
+
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.card-habilidade:hover {
+    transform: translateY(-6px);
+    opacity: 0.9;
+}
+
+.card-habilidade i {
+    font-size: 40px;
+}
+
+.card-habilidade span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+/* PÁGINA INTERESSES (MAPA MENTAL) */
+.interesses {
+    gap: 30px;
+}
+
+.mapa-mental {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 10;
+}
+
+.mapa-mental svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mapa-mental path {
+    fill: none;
+    stroke: #F2D8A7;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 2 8;
+    vector-effect: non-scaling-stroke;
+}
+
+.no-central,
+.no-interesse {
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.no-central {
+    left: 50%;
+    top: 50%;
+
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+    background-color: #F2D8A7;
+    color: #725D8C;
+}
+
+.no-central i {
+    font-size: 34px;
+}
+
+.no-central span {
+    font-family: 'Anton', sans-serif;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+
+.no-interesse {
+    min-width: 130px;
+    padding: 16px 20px;
+
+    border: 2px solid #F2D8A7;
+    border-radius: 20px;
+    background-color: #725D8C;
+
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.no-interesse i {
+    font-size: 28px;
+}
+
+.no-interesse span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.no-interesse:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+    background-color: #F2D8A7;
+    color: #725D8C;
+}
+
+/* CELULAR */
+@media (max-width: 700px) {
+
+    .mapa-mental {
+        aspect-ratio: auto;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .mapa-mental svg {
+        display: none;
+    }
+
+    .no-central,
+    .no-interesse {
+        position: static;
+        transform: none;
+    }
+
+    .no-central {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 10px;
+    }
+
+    .no-interesse {
+        min-width: 0;
+        padding: 16px 10px;
+    }
+
+    .no-interesse:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 600px)
+{
+.card-habilidade {
+        width: 105px;
+        padding: 20px 8px;
+    }
+
+    .card-habilidade i {
+        font-size: 32px;
+    }
+
+    .grupo-habilidades h3 {
+        font-size: 15px;
+    }
+}
 
 /* RESPONSIVIDADE */
 @media (max-width: 900px) {
