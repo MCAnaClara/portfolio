@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfólio | Clara</title>
+
+    <link rel="stylesheet" href="portfolio.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVEGAÇÃO -->
+    <nav id="navbar">
+        <a href="#inicio" class="textos">Início</a>
+        <a href="#sobre" class="textos">Sobre mim</a>
+        <a href="#historia" class="textos">Minha história</a>
+        <a href="#interesses" class="textos">Meus interesses</a>
+        <a href="#habilidades" class="textos">Minhas habilidades</a>
+        <a href="#objetivos" class="textos">Meus objetivos</a>
+    </nav>
+
+    <span class="linha"></span>
+
+    <main>
+
+        <!-- PÁGINA 1: INÍCIO -->
+        <section class="pagina redes-sociais" id="inicio">
+
+            <div class="conteudo-inicio">
+                <h1>Portfólio</h1>
+
+                <div class="informacoes-inicio">
+                    <p>Conheça um pouco de mim e das minhas habilidades</p>
+
+                    <div class="icones">
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- PÁGINA 2: SOBRE MIM -->
+        <section class="pagina descrition" id="sobre">
+
+            <div class="descricao">
+
+                <div class="texto-descricao">
+                    <h2>Oii, eu sou a Clara</h2>
+
+                    <p>
+                        Eu estudo na Etec e no Senai, ambos na área de
+                        Desenvolvimento de Sistemas. Amo tecnologia e
+                        pretendo trabalhar com isso no futuro. Além da
+                        parte profissional, sou uma grande consumidora
+                        de livros, amo moda feminina e ouvir músicas.
+                    </p>
+                </div>
+
+                <div class="imagem-descricao">
+                    <img src="" alt="Foto da Clara">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PÁGINA 3: MINHA HISTÓRIA -->
+        <section class="pagina historia" id="historia">
+
+            <div class="conteudo-historia">
+
+                <h2>Minha história</h2>
+
+                <p>
+                    Nasci em São Paulo, na Avenida Paulista, em
+                    17/02/2010, cresci em São Paulo junto com minha
+                    avó e meus primos. Desde pequena me interessei
+                    por tecnologia e participei de torneios de
+                    robótica e gostei bastante.
+
+                    Com a recomendação dos meus familiares, que me
+                    auxiliam nas minhas escolhas profissionais,
+                    decidi seguir nessa área. A partir daí comecei
+                    a desenvolver curiosidade pela programação,
+                    porém eu realmente me aprofundei na área após
+                    entrar na Etec. Com isso pesquisei cursos de
+                    Desenvolvimento de Sistemas e consegui entrar
+                    no Senai.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PÁGINA 4: INTERESSES -->
+        <section class="pagina interesses" id="interesses">
+
+            <h2>Meus interesses</h2>
+
+        </section>
+
+
+        <!-- PÁGINA 5: HABILIDADES -->
+        <section class="pagina habilidades" id="habilidades">
+
+            <h2>Minhas habilidades</h2>
+
+        </section>
+
+
+        <!-- PÁGINA 6: OBJETIVOS -->
+        <section class="pagina objetivos" id="objetivos">
+
+            <h2>Meus objetivos</h2>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT: ESCONDER E MOSTRAR NAVBAR -->
+    <script>
+
+        let ultimaPosicao = 0;
+        const nav = document.querySelector('#navbar');
+        window.addEventListener('scroll', () => {
+
+            let posicaoAtual = window.scrollY;
+
+            if (posicaoAtual > ultimaPosicao && posicaoAtual > 100) {
+                nav.classList.add('escondida');
+            } else {
+                nav.classList.remove('escondida');
+            }
+            ultimaPosicao = posicaoAtual;
+        });
+
+    </script>
+
+</body>
+
+</html>

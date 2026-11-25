@@ -1,0 +1,323 @@
+
+/* FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: none;
+}
+
+body {
+    width: 100%;
+    background-color: #F2D8A7;
+    overflow-x: hidden;
+}
+
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+
+    padding: 20px 25px;
+
+    background-color: #F2D8A7;
+
+    transition: transform 0.3s ease;
+}
+
+nav.escondida {
+    transform: translateY(-100%);
+}
+
+nav a {
+    position: relative;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: #725D8C;
+
+    transition: color 0.3s ease;
+}
+
+/* LINHA DO HOVER */
+nav a::after {
+    content: "";
+
+    position: absolute;
+    width: 0;
+    height: 2px;
+
+    bottom: -5px;
+    left: 0;
+
+    background-color: #725D8C;
+
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #342936;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* LINHA ABAIXO DA NAVBAR */
+.linha {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background-color: #725D8C;
+}
+
+
+/* CONFIGURAÇÃO DAS PÁGINAS */
+.pagina {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 8%;
+}
+
+
+/* TÍTULOS */
+h1, h2 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #725D8C;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    color: #725D8C;
+}
+
+
+/* PÁGINA INICIAL */
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo-inicio {
+    width: fit-content;
+    max-width: 100%;
+}
+
+.redes-sociais h1 {
+    font-size: clamp(100px, 15vw, 220px);
+    line-height: 1;
+}
+
+.informacoes-inicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    margin-top: 15px;
+}
+
+.redes-sociais p {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.icones {
+    display: flex;
+    gap: 20px;
+}
+
+.redes-sociais a {
+    text-decoration: none;
+}
+
+.redes-sociais a i {
+    color: #725D8C;
+    font-size: 35px;
+
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.redes-sociais a:hover i {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+
+/* PÁGINA SOBRE MIM */
+.descricao {
+    width: 100%;
+    max-width: 1200px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.texto-descricao {
+    flex: 1;
+}
+
+.texto-descricao h2 {
+    font-size: clamp(45px, 6vw, 85px);
+    margin-bottom: 25px;
+}
+
+.texto-descricao p {
+    font-size: 16px;
+    line-height: 1.9;
+    font-weight: 500;
+}
+
+.imagem-descricao {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-descricao img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+}
+
+
+/* PÁGINA MINHA HISTÓRIA */
+.conteudo-historia {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.conteudo-historia h2 {
+    font-size: clamp(50px, 7vw, 100px);
+    margin-bottom: 30px;
+}
+
+.conteudo-historia p {
+    font-size: 16px;
+    line-height: 2;
+    font-weight: 500;
+}
+
+
+/* DEMAIS PÁGINAS */
+.interesses h2,
+.habilidades h2,
+.objetivos h2 {
+    font-size: clamp(50px, 8vw, 110px);
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+
+    nav {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .descricao {
+        gap: 30px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    html {
+        scroll-snap-type: y proximity;
+    }
+
+    nav {
+        gap: 12px;
+        padding: 15px 10px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .linha {
+        top: 65px;
+    }
+
+    .pagina {
+        padding: 100px 25px;
+    }
+
+    .redes-sociais h1 {
+        font-size: clamp(65px, 17vw, 100px);
+    }
+
+    .informacoes-inicio {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .descricao {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto-descricao h2 {
+        font-size: 45px;
+    }
+
+    .texto-descricao p {
+        font-size: 14px;
+    }
+
+    .imagem-descricao img {
+        max-width: 280px;
+    }
+
+}
